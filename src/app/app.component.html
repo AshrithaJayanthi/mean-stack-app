@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://logos-download.com/wp-content/uploads/2016/02/Chanel_logo.png" alt="" width="70px">
+    </a>
+    <p class="p-2 m-2">CHANEL</p>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!-- HOME -->
+        <li class="nav-item" *ngIf="!us.userLoginStatus">
+        <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+        </li>
+        
+        <!-- LOGIN PATH -->
+       
+        <li class="nav-item" *ngIf="!us.userLoginStatus">
+          <a class="nav-link" routerLink="login" routerLinkActive="active" >Login</a>
+        </li>
+        <!-- logout -->
+        <li class="nav-item" *ngIf="us.userLoginStatus">
+          <a class="nav-link" routerLink="login" routerLinkActive="active" (click)=userLogout()>Logout</a>
+        </li>
+         <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="userprofile" routerLinkActive="active">Users</a>
+        </li> -->
+
+        <li class="nav-item" *ngIf="!us.userLoginStatus">
+          <a class="nav-link" routerLink="register" routerLinkActive="active">Register</a>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+<!-- nest product component -->
+<div class="container">
+
+  <router-outlet></router-outlet>
+</div>
+<!-- nest footer component -->
+
+<!-- <app-footer class="mt-auto"></app-footer> -->

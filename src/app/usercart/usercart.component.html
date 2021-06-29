@@ -1,0 +1,16 @@
+<table class="table text-center mx-auto mt-5">
+    <thead>
+        <th>Productname</th>
+        <th>Model</th>
+        <th>Image</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.productname}}</td>
+            <td>{{product.model}}</td>
+            <td>
+                <img src={{product.profileImg}} width="100px" alt="">
+            </td>
+        </tr>
+    </tbody>
+</table>
